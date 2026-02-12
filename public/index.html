@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#7c3aed" />
+    <title>AshaAid - Accessible Help for Everyone</title>
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#mainContent">Skip to main content</a>
+
+    <header class="hero">
+      <div>
+        <p class="badge">Inclusive Care Platform</p>
+        <h1>AshaAid</h1>
+        <p class="hero-text">
+          Fast help for poor families, elderly citizens, and physically challenged people. Built with voice,
+          clear visuals, and one-tap assistance.
+        </p>
+      </div>
+      <div class="hero-actions">
+        <button id="sosButton" class="danger">🚨 Need Immediate Help</button>
+        <p class="small-text">Tip: Add this app to your home screen. It works like an Android app (PWA).</p>
+      </div>
+    </header>
+
+    <main id="mainContent" class="layout">
+      <section class="card controls" aria-label="Accessibility controls">
+        <h2>Accessibility Center</h2>
+        <div class="button-grid">
+          <button id="fontIncrease">A+ Bigger Font</button>
+          <button id="fontDecrease">A- Smaller Font</button>
+          <button id="toggleContrast">High Contrast</button>
+          <button id="toggleDyslexia">Readable Font</button>
+          <button id="toggleSoftTheme">Soft Theme</button>
+        </div>
+        <label class="toggle">
+          <input type="checkbox" id="voiceAutoRead" />
+          <span>Auto read AI replies aloud</span>
+        </label>
+      </section>
+
+      <section class="card assistant" aria-label="AI assistant support">
+        <h2>Gen AI Support Bot</h2>
+        <p class="small-text">Tap a quick help chip, speak, or type your problem.</p>
+
+        <div class="quick-chips" id="quickChips">
+          <button class="chip" data-prompt="I need food support for my family">🍱 Food</button>
+          <button class="chip" data-prompt="Need wheelchair and transport support">♿ Mobility</button>
+          <button class="chip" data-prompt="Need medicine and doctor guidance">💊 Medicine</button>
+          <button class="chip" data-prompt="I need safe shelter tonight">🏠 Shelter</button>
+          <button class="chip" data-prompt="I cannot read forms, please guide me">📄 Form Help</button>
+        </div>
+
+        <div class="input-grid">
+          <div>
+            <label for="language">Language</label>
+            <select id="language">
+              <option value="en">English</option>
+              <option value="hi">हिन्दी (Hindi)</option>
+            </select>
+          </div>
+          <div>
+            <label for="voiceTone">Reply style</label>
+            <select id="voiceTone">
+              <option value="simple">Simple</option>
+              <option value="detailed">Detailed</option>
+            </select>
+          </div>
+        </div>
+
+        <label for="userPrompt">Describe your need</label>
+        <textarea id="userPrompt" rows="4" placeholder="Example: I am with my grandmother and need medicine + wheelchair support..."></textarea>
+
+        <div class="button-grid">
+          <button id="micButton">🎤 Voice Input</button>
+          <button id="sendPrompt">Send to AshaBot</button>
+          <button id="readReply">🔊 Read Reply</button>
+          <button id="copyReply">📋 Copy Reply</button>
+        </div>
+
+        <article id="assistantReply" aria-live="polite">AshaBot will reply with easy step-by-step help.</article>
+      </section>
+
+      <section class="card request" aria-label="Request volunteer help">
+        <h2>Request Volunteer Help</h2>
+        <form id="helpForm">
+          <div class="input-grid">
+            <div>
+              <label for="requestName">Your Name</label>
+              <input id="requestName" type="text" placeholder="Name" />
+            </div>
+            <div>
+              <label for="requestPhone">Phone</label>
+              <input id="requestPhone" type="tel" placeholder="Phone number" />
+            </div>
+          </div>
+
+          <label for="requestLocation">Location</label>
+          <input id="requestLocation" type="text" placeholder="Area / landmark" />
+
+          <div class="input-grid">
+            <div>
+              <label for="requestCategory">Need Type</label>
+              <select id="requestCategory">
+                <option value="food">Food</option>
+                <option value="medicine">Medicine</option>
+                <option value="mobility">Mobility</option>
+                <option value="shelter">Shelter</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            <div>
+              <label for="requestUrgency">Urgency</label>
+              <select id="requestUrgency">
+                <option value="normal">Normal</option>
+                <option value="urgent">Urgent</option>
+                <option value="critical">Critical</option>
+              </select>
+            </div>
+          </div>
+
+          <label for="requestNotes">Notes</label>
+          <textarea id="requestNotes" rows="3" placeholder="Add details like disability support, age, medicine names, etc."></textarea>
+
+          <button type="submit">Submit Help Request</button>
+        </form>
+        <p id="helpStatus" class="status">No request submitted yet.</p>
+      </section>
+
+      <section class="card resources" aria-label="Essential resources">
+        <h2>Quick Help Resources</h2>
+        <ul id="resourceList"></ul>
+      </section>
+
+      <section class="card dashboard" aria-label="Recent request dashboard">
+        <h2>Community Request Dashboard</h2>
+        <div id="requestStats" class="stats"></div>
+        <ul id="requestFeed" class="feed"></ul>
+      </section>
+    </main>
+
+    <script src="/app.js"></script>
+  </body>
+</html>

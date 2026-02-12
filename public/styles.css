@@ -1,0 +1,261 @@
+:root {
+  --bg: linear-gradient(145deg, #f0f9ff, #f5f3ff 55%, #ecfeff);
+  --text: #1f2937;
+  --card: rgba(255, 255, 255, 0.92);
+  --primary: #7c3aed;
+  --primary-2: #0ea5e9;
+  --danger: #dc2626;
+  --focus: #f59e0b;
+  --muted: #64748b;
+  font-size: 18px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  color: var(--text);
+  background: var(--bg);
+  min-height: 100vh;
+  line-height: 1.5;
+}
+
+body.soft-theme {
+  --bg: linear-gradient(145deg, #fff7ed, #fefce8 45%, #ecfccb);
+  --primary: #d97706;
+  --primary-2: #65a30d;
+}
+
+body.high-contrast {
+  --bg: #000;
+  --text: #fff;
+  --card: #111;
+  --primary: #fde047;
+  --primary-2: #22d3ee;
+  --danger: #fb7185;
+  --focus: #22d3ee;
+}
+
+body.dyslexia-font {
+  font-family: Verdana, Tahoma, sans-serif;
+  letter-spacing: 0.05em;
+}
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+}
+
+.skip-link:focus {
+  left: 1rem;
+  top: 1rem;
+  background: #000;
+  color: #fff;
+  padding: 0.5rem;
+  border-radius: 0.4rem;
+  z-index: 1000;
+}
+
+.hero {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.3rem;
+  background: linear-gradient(120deg, var(--primary), var(--primary-2));
+  color: #fff;
+}
+
+.badge {
+  display: inline-block;
+  padding: 0.3rem 0.7rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.24);
+  font-weight: 700;
+}
+
+.hero h1 {
+  margin: 0.3rem 0;
+  font-size: 2rem;
+}
+
+.hero-text {
+  max-width: 58ch;
+}
+
+.hero-actions {
+  display: grid;
+  align-content: start;
+  gap: 0.6rem;
+}
+
+.small-text {
+  margin: 0;
+  font-size: 0.92rem;
+}
+
+.layout {
+  width: min(1150px, 95%);
+  margin: 1rem auto 2rem;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid rgba(124, 58, 237, 0.25);
+  border-radius: 1rem;
+  padding: 1rem;
+  box-shadow: 0 12px 22px rgba(15, 23, 42, 0.08);
+}
+
+.card h2 {
+  margin-top: 0;
+}
+
+label,
+input,
+button,
+select,
+textarea,
+li,
+p,
+article {
+  font-size: 1rem;
+}
+
+input,
+select,
+textarea,
+button {
+  width: 100%;
+  margin-top: 0.35rem;
+  margin-bottom: 0.65rem;
+  border-radius: 0.65rem;
+  border: 2px solid #cbd5e1;
+  padding: 0.72rem;
+}
+
+textarea {
+  resize: vertical;
+}
+
+button {
+  background: var(--primary);
+  color: #fff;
+  border-color: transparent;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.95;
+  transform: translateY(-1px);
+}
+
+button.danger {
+  background: var(--danger);
+}
+
+button:focus,
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 3px solid var(--focus);
+  outline-offset: 2px;
+}
+
+.button-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 0.5rem;
+}
+
+.input-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 0.7rem;
+}
+
+.toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-weight: 700;
+}
+
+.toggle input {
+  width: 1.2rem;
+  height: 1.2rem;
+  margin: 0;
+}
+
+.quick-chips {
+  display: flex;
+  gap: 0.45rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.55rem;
+}
+
+.chip {
+  width: auto;
+  padding: 0.5rem 0.72rem;
+  border-radius: 999px;
+  background: #ede9fe;
+  color: #4c1d95;
+  border: 1px solid #c4b5fd;
+}
+
+body.high-contrast .chip {
+  color: #000;
+}
+
+#assistantReply {
+  min-height: 6rem;
+  border: 2px dashed #a78bfa;
+  border-radius: 0.7rem;
+  padding: 0.75rem;
+  background: #faf5ff;
+}
+
+.status {
+  font-weight: 700;
+  color: #0f766e;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 0.6rem;
+}
+
+.stat-card {
+  background: #eef2ff;
+  border: 1px solid #c7d2fe;
+  border-radius: 0.6rem;
+  padding: 0.55rem;
+}
+
+.feed {
+  padding-left: 1rem;
+  margin-bottom: 0;
+}
+
+.feed li {
+  margin-bottom: 0.5rem;
+}
+
+@media (min-width: 980px) {
+  .layout {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .assistant,
+  .dashboard {
+    grid-column: span 2;
+  }
+}

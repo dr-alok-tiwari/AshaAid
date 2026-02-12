@@ -1,0 +1,10 @@
+{
+  "name": "AshaAid",
+  "short_name": "AshaAid",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f5f3ff",
+  "theme_color": "#7c3aed",
+  "description": "Interactive, accessible aid app for poor families, elders and physically challenged people.",
+  "icons": []
+}
