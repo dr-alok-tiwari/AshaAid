@@ -1,0 +1,11 @@
+{
+  "name": "ashaaid",
+  "version": "1.0.0",
+  "description": "Accessible aid platform with AI guidance for vulnerable communities",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js",
+    "test": "node --test"
+  }
+}
